@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skillbus</title>
+  <link rel="icon" href="icon.svg" type="image/svg">
+  <link rel="preload" href="fonts/OpenSansBold.woff2" as="font" type="font/woff2">
+  <link rel="preload" href="fonts/OpenSansSemiBold.woff2" as="font" type="font/woff2">
+  <link rel="preload" href="fonts/OpenSansSemiBold.woff2" as="font" type="font/woff2">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="library/choices.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script defer src="library/popper.min.js"></script>
+  <script defer src="library/tippy-bundle.umd.js"></script>
+  <script defer src="library/choices.min.js"></script>
+  <script type="module" src="script/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      createCRMApp();
+    });
+  </script>
+</head>
+
+<body class="body">
+  <header class="header">
+    <div class="header__container">
+      <div class="header__wrapper">
+        <a class="header__link" href="#" aria-label="Перейти на главную страинцу Skillbus">
+          <picture class="logo">
+            <source srcset="img/logo-mobile.svg" media="(max-width: 716px)">
+            <img src="img/logo.svg" alt="Логотип Skillbus">
+          </picture>
+        </a>
+        <form class="header__form form-search">
+          <input class="form-search__input input-reset" type="text" placeholder="Введите запрос"
+            aria-label="Ввведини запрос для поиска в системе" id="search">
+        </form>
+      </div>
+    </div>
+  </header>
+  <main>
+    <h1 class="visually-hidden">CRM Skillbus</h1>
+    <section class="hero-table">
+      <div class="container">
+        <div class="hero-table__wrapper">
+          <h2 class="hero-table__title title">Клиенты</h2>
+          <table class="table-main">
+            <thead class="table-main__head table-head">
+              <tr class="table-head__tr">
+                <td class="table-head__td">
+                  <button class="table-head__button btn-reset" aria-label="Сортировка клиентов по ID" data-sort-by="id">
+                    <span class="table-head__title">ID</span>
+                    <svg class="table-head__svg" width="12" height="12">
+                      <use xlink:href="img/svg/sprite-svg.svg#arrow"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td class="table-head__td">
+                  <button class="table-head__button btn-reset" aria-label="Сортировка клиентов по ФИО"
+                    data-sort-by="name">
+                    <span class="table-head__title">Фамилия Имя Отчество</span>
+                    <svg class="table-head__svg" width="12" height="12">
+                      <use xlink:href="img/svg/sprite-svg.svg#arrow"></use>
+                    </svg>
+                    <span class="table-head__title table-head__title--order">А-Я</span>
+                  </button>
+                </td>
+                <td class="table-head__td">
+                  <button class="table-head__button btn-reset" aria-label="Сортировка клиентов по дате создания"
+                    data-sort-by="created">
+                    <span class="table-head__title">Дата и время создания</span>
+                    <svg class="table-head__svg" width="12" height="12">
+                      <use xlink:href="img/svg/sprite-svg.svg#arrow"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td class="table-head__td">
+                  <button class="table-head__button btn-reset" aria-label="Сортировка клиентов по дате изменения"
+                    data-sort-by="updated">
+                    <span class="table-head__title">Последние изменения</span>
+                    <svg class="table-head__svg" width="12" height="12">
+                      <use xlink:href="img/svg/sprite-svg.svg#arrow"></use>
+                    </svg>
+                  </button>
+                </td>
+                <td class="table-head__td">
+                  <span class="table-head__title">Контакты</span>
+                </td>
+                <td class="table-head__td">
+                  <span class="table-head__title">Действия</span>
+                </td>
+              </tr>
+            </thead>
+            <tbody class="table-main__body table-body" id="table-app">
+            </tbody>
+          </table>
+          <button class="hero-table__btn btn btn-reset visually-hidden" id="add-btn">
+            <svg class="btn__icon btn__icon--hero" width="23" height="16">
+              <use xlink:href="img/svg/sprite-svg.svg#add"></use>
+            </svg>
+            <span class="btn__descr">Добавить клиента</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
